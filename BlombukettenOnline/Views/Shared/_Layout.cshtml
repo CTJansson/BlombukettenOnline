@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+    <script src="~/Scripts/jquery.cookie.js"></script>
+    <link href='http://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+</head>
+<body>
+
+    <div class="navbar navbar-fixed-top navbar-border">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <span class="navbar-brand" id="company-name">Blombuketten Online</span>
+                @*@Html.ActionLink("Blombuketten Online", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })*@
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Våra blommor", "Index", "Home")</li>
+                    <li>@Html.ActionLink("Om oss", "About", "Home")</li>
+                    <li>@Html.ActionLink("Kontakta oss", "Contact", "Home")</li>
+                </ul>
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="/Home/CheckOut"><span class="glyphicon glyphicon-shopping-cart"></span> <span class="badge" id="total-order-sum">0 kr</span> Kassa</a></li>
+                </ul>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="container body-content">
+        @RenderBody()
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <footer>
+                <div class="col-md-1">
+                    <p></p>
+                </div>
+                <div class="col-md-3">
+                    <h4>Blombuketten Online</h4>
+                    <p>
+                        Välkommen till Blombuketten Online, här kan du plocka ihop dina egna buketter via vårat webbgränssnitt och sedan hämta ut de i vår butik eller så skickar vi hem dem till dig eller direkt till den som ska ha de. Enklare än såhär blir det inte!
+                    </p>
+                </div>
+                <div class="col-md-4">
+                    <p class="centertext">Blombuketten Online &copy; @DateTime.Now.Year</p>
+                </div>
+                <div class="col-md-3">
+                    <h4>Meny</h4>
+                    <ul class="list-unstyled">
+                        <li>@Html.ActionLink("Våra blommor", "Index", "Home")</li>
+                        <li>@Html.ActionLink("Om oss", "About", "Home")</li>
+                        <li>@Html.ActionLink("Kontakta oss", "Contact", "Home")</li>
+                    </ul>
+                </div>
+                <div class="col-md-1">
+                    <p></p>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+
+    <script src="~/Scripts/products-list.js"></script>
+    
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

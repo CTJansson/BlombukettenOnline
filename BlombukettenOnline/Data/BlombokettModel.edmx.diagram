@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="e8c9e99a1ee54d0898ebdc9236eb348b" Name="Diagram1">
+        <EntityTypeShape EntityType="Grupptenta4Model.Address" Width="1.5" PointX="0.75" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Grupptenta4Model.Boquett" Width="1.5" PointX="5.25" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Grupptenta4Model.Category" Width="1.5" PointX="5.25" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Grupptenta4Model.Color" Width="1.5" PointX="5.25" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Grupptenta4Model.Email" Width="1.5" PointX="0.75" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Grupptenta4Model.Order" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="Grupptenta4Model.Product" Width="1.5" PointX="7.5" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="Grupptenta4Model.sysdiagram" Width="1.5" PointX="7.75" PointY="4.75" IsExpanded="true" />
+        <AssociationConnector Association="Grupptenta4Model.FK__Order__AddressId__1BFD2C07" ManuallyRouted="false" />
+        <AssociationConnector Association="Grupptenta4Model.FK__Boquett__OrderId__1FCDBCEB" ManuallyRouted="false" />
+        <AssociationConnector Association="Grupptenta4Model.FK__Category__Parent__108B795B" ManuallyRouted="false" />
+        <AssociationConnector Association="Grupptenta4Model.FK__Product__ColorId__15502E78" ManuallyRouted="false" />
+        <AssociationConnector Association="Grupptenta4Model.FK__Order__EmailId__1CF15040" ManuallyRouted="false" />
+        <AssociationConnector Association="Grupptenta4Model.ProductBoquett" ManuallyRouted="false" />
+        <AssociationConnector Association="Grupptenta4Model.ProductCategory" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

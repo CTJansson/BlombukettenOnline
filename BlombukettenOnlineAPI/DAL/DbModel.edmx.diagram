@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="a0373963605f4258aefe7887eb4f7ae3" Name="Diagram1">
+        <EntityTypeShape EntityType="Grupptenta4Model.Address" Width="1.5" PointX="0.75" PointY="7.625" />
+        <EntityTypeShape EntityType="Grupptenta4Model.Boquett" Width="1.5" PointX="5.25" PointY="1.875" />
+        <EntityTypeShape EntityType="Grupptenta4Model.Category" Width="1.5" PointX="3" PointY="9.375" />
+        <EntityTypeShape EntityType="Grupptenta4Model.Color" Width="1.5" PointX="3" PointY="6.875" />
+        <EntityTypeShape EntityType="Grupptenta4Model.DeliveryMethod" Width="1.5" PointX="0.75" PointY="5.375" />
+        <EntityTypeShape EntityType="Grupptenta4Model.Email" Width="1.5" PointX="0.75" PointY="10.25" />
+        <EntityTypeShape EntityType="Grupptenta4Model.Order" Width="1.5" PointX="3" PointY="1" />
+        <EntityTypeShape EntityType="Grupptenta4Model.PaymentMethod" Width="1.5" PointX="0.75" PointY="2.125" />
+        <EntityTypeShape EntityType="Grupptenta4Model.Product" Width="1.5" PointX="5.25" PointY="7.75" />
+        <EntityTypeShape EntityType="Grupptenta4Model.ProductBoquett" Width="1.5" PointX="7.5" PointY="2" />
+        <EntityTypeShape EntityType="Grupptenta4Model.Store" Width="1.5" PointX="0.75" PointY="12.75" />
+        <AssociationConnector Association="Grupptenta4Model.FK__Order__AddressId__286302EC" />
+        <AssociationConnector Association="Grupptenta4Model.FK__Boquett__OrderId__2F10007B" />
+        <AssociationConnector Association="Grupptenta4Model.FK__ProductBo__Boque__32E0915F" />
+        <AssociationConnector Association="Grupptenta4Model.FK__Category__Parent__164452B1" />
+        <AssociationConnector Association="Grupptenta4Model.FK__Product__Categor__1BFD2C07" />
+        <AssociationConnector Association="Grupptenta4Model.FK__Product__ColorId__1B0907CE" />
+        <AssociationConnector Association="Grupptenta4Model.FK__Order__DeliveryI__2B3F6F97" />
+        <AssociationConnector Association="Grupptenta4Model.FK__Order__EmailId__29572725" />
+        <AssociationConnector Association="Grupptenta4Model.FK__Order__PaymentId__2A4B4B5E" />
+        <AssociationConnector Association="Grupptenta4Model.FK__Order__StoreId__2C3393D0" />
+        <AssociationConnector Association="Grupptenta4Model.FK__ProductBo__Produ__31EC6D26" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

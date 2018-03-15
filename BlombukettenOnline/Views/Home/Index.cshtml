@@ -1,0 +1,333 @@
+﻿@{
+    ViewBag.Title = "Blombuketten Online";
+}
+
+<div class="container">
+    <div class="row">
+        <p></p>
+    </div>
+
+    <div class="row">
+        <div class="col-md-2 col-sm-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title"><span class="glyphicon glyphicon-filter"></span> Filter</h3>
+                </div>
+                <div class="panel-body panel-body-nesting">
+                    @*<p class="panel-text">Välj vilka kategorier och färger du vill se och klicka på knappen längst ner.</p>*@
+
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title"><span class="glyphicon glyphicon-th-list"></span> Kategorier</h3>
+                        </div>
+                        <div class="panel-body panel-body-nesting">
+                            <div class="list-group filter-options" id="mycategories">
+                                @*<a href="#" class="filter-options list-group-item active">Alla</a>
+                                    <a href="#" class="filter-options list-group-item">Rosor</a>
+                                    <a href="#" class="filter-options list-group-item">Liljor</a>
+                                    <a href="#" class="filter-options list-group-item">Nejlikor</a>
+                                    <a href="#" class="filter-options list-group-item">Tulpaner</a>*@
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title"><span class="glyphicon glyphicon-tags"></span> Färger</h3>
+                        </div>
+                        <div class="panel-body panel-body-nesting">
+                            <div class="list-group filter-options" id="mycolors">
+                                @*<a href="#" class="filter-options list-group-item active">Alla</a>
+                                <a href="#" class="filter-options list-group-item">Röd</a>
+                                <a href="#" class="filter-options list-group-item">Rosa</a>
+                                <a href="#" class="filter-options list-group-item">Vit</a>
+                                <a href="#" class="filter-options list-group-item">Lila</a>
+                                <a href="#" class="filter-options list-group-item">Gul</a>
+                                <a href="#" class="filter-options list-group-item">Orange</a>*@
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div> <!-- end Filter panel-body-nesting -->
+                
+            </div> <!-- end Filter panel-default -->
+            <button type="button" class="btn btn-primary btn-block textarea-full-small" onclick="getAllProductsInSelectedCatAndCol()"><span class=" glyphicon glyphicon-filter"></span> Filtrerar</button>
+        </div> <!-- end left grid -->
+
+        <div class="col-md-7 col-sm-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    @*<div id="expand-box">
+                        <div id="expand-box-header">*@
+                    <span>&nbsp;</span>
+                    <h3 class="panel-title" style="float: left;"><span class="glyphicon glyphicon-leaf"></span> Produkter </h3>
+                    <div class="dropdown" style="float: right;">
+                        @*<button class="btn btn-primary btn-xs dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
+                                Färg <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-left pull-left" role="menu" aria-labelledby="dropdownMenu1">
+                                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Alla</a></li>
+                                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Röd</a></li>
+                                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Rosa</a></li>
+                                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Vit</a></li>
+                                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Gul</a></li>
+                                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Lila</a></li>
+                                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Blå</a></li>
+                                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Grön</a></li>
+                            </ul>*@
+                    </div>
+                    @*</div>
+                        </div>*@
+                </div>
+                <div class="panel-body">
+
+                    <div class="row">
+                        <ul class="products-list" id="myproducts">
+
+                            @*<li class="products-list col-lg-4 col-md-4 col-sm-6 col-xs-6">
+                                    <div class="thumbnail">
+                                        <img class="img-responsive img-circle img-thumbnail" src="\content\images\RosRod.jpg" alt="Responsive image" />
+                                        <div class="caption">
+                                            <h4 id="product-name">Ros, röd</h4>
+                                            <p id="product-description">
+                                                Klassisk röd ros. Den ultimata kärleksförklaringen!
+                                            </p>
+                                            <h3>
+                                                <span class="label label-default" id="product-price">
+                                                    35 kr
+                                                </span>
+                                                <small>
+                                                    <button type="button" class="btn btn-primary btn-sm">
+                                                        <span class="glyphicon glyphicon-plus-sign"></span> Lägg till
+                                                    </button>
+                                                </small>
+                                            </h3>
+                                        </div>
+                                    </div>
+                                </li>
+
+                                <li class="products-list col-lg-4 col-md-4 col-sm-6 col-xs-6">
+                                    <div class="thumbnail">
+                                        <img class="img-responsive img-circle img-thumbnail" src="\content\images\TulpanVit.jpg" alt="Responsive image" />
+                                        <div class="caption">
+                                            <h4 id="product-name">Tulpan, vit</h4>
+                                            <p id="product-description">
+                                                Tulpan i vacker vit färg.
+                                            </p>
+                                            <h3>
+                                                <span class="label label-default" id="product-price">
+                                                    45 kr
+                                                </span>
+                                                <small>
+                                                    <button type="button" class="btn btn-primary btn-sm">
+                                                        <span class="glyphicon glyphicon-plus-sign"></span> Lägg till
+                                                    </button>
+                                                </small>
+                                            </h3>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="products-list col-lg-4 col-md-4 col-sm-6 col-xs-6">
+                                    <div class="thumbnail">
+                                        <img class="img-responsive img-circle img-thumbnail" src="\content\images\TulpanRosa.jpg" alt="Responsive image" />
+                                        <div class="caption">
+                                            <h4 id="product-name">Tulpan, rosa</h4>
+                                            <p id="product-description">
+                                                Bedårande rosa tulpan, som sätter en vacker färg på tillvaron.
+                                            </p>
+                                            <h3>
+                                                <span class="label label-default" id="product-price">
+                                                    45 kr
+                                                </span>
+                                                <small>
+                                                    <button type="button" class="btn btn-primary btn-sm">
+                                                        <span class="glyphicon glyphicon-plus-sign"></span> Lägg till
+                                                    </button>
+                                                </small>
+                                            </h3>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="products-list col-lg-4 col-md-4 col-sm-6 col-xs-6">
+                                    <div class="thumbnail">
+                                        <img class="img-responsive img-circle img-thumbnail" src="\content\images\BildSaknas.jpg" alt="Responsive image" />
+                                        <div class="caption">
+                                            <h4 id="product-name">Nirnroot</h4>
+                                            <p id="product-description">
+                                                <em>Ingen beskrivning tillgänglig</em>
+                                            </p>
+                                            <h3>
+                                                <span class="label label-default" id="product-price">
+                                                    350 kr
+                                                </span>
+                                                <small>
+                                                    <button type="button" class="btn btn-primary btn-sm">
+                                                        <span class="glyphicon glyphicon-plus-sign"></span> Lägg till
+                                                    </button>
+                                                </small>
+                                            </h3>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="products-list col-lg-4 col-md-4 col-sm-6 col-xs-6">
+                                    <div class="thumbnail">
+                                        <img class="img-responsive img-circle img-thumbnail" src="\content\images\RosRod.jpg" alt="Responsive image" />
+                                        <div class="caption">
+                                            <h4 id="product-name">Ros, röd</h4>
+                                            <p id="product-description">
+                                                Klassisk röd ros. Den ultimata kärleksförklaringen!
+                                            </p>
+                                            <h3>
+                                                <span class="label label-default" id="product-price">
+                                                    350 kr
+                                                </span>
+                                                <small>
+                                                    <button type="button" class="btn btn-primary btn-sm">
+                                                        <span class="glyphicon glyphicon-plus-sign"></span> Lägg till
+                                                    </button>
+                                                </small>
+                                            </h3>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="products-list col-lg-4 col-md-4 col-sm-6 col-xs-6">
+                                    <div class="thumbnail">
+                                        <img class="img-responsive img-circle img-thumbnail" src="\content\images\RosRod.jpg" alt="Responsive image" />
+                                        <div class="caption">
+                                            <h4 id="product-name">Ros, röd</h4>
+                                            <p id="product-description">
+                                                Klassisk röd ros. Den ultimata kärleksförklaringen!
+                                            </p>
+                                            <h3>
+                                                <span class="label label-default" id="product-price">
+                                                    350 kr
+                                                </span>
+                                                <small>
+                                                    <button type="button" class="btn btn-primary btn-sm">
+                                                        <span class="glyphicon glyphicon-plus-sign"></span> Lägg till
+                                                    </button>
+                                                </small>
+                                            </h3>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="products-list col-lg-4 col-md-4 col-sm-6 col-xs-6">
+                                    <div class="thumbnail">
+                                        <img class="img-responsive img-circle img-thumbnail" src="\content\images\RosRod.jpg" alt="Responsive image" />
+                                        <div class="caption">
+                                            <h4 id="product-name">Ros, röd</h4>
+                                            <p id="product-description">
+                                                Klassisk röd ros. Den ultimata kärleksförklaringen!
+                                            </p>
+                                            <h3>
+                                                <span class="label label-default" id="product-price">
+                                                    350 kr
+                                                </span>
+                                                <small>
+                                                    <button type="button" class="btn btn-primary btn-sm">
+                                                        <span class="glyphicon glyphicon-plus-sign"></span> Lägg till
+                                                    </button>
+                                                </small>
+                                            </h3>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="products-list col-lg-4 col-md-4 col-sm-6 col-xs-6">
+                                    <div class="thumbnail">
+                                        <img class="img-responsive img-circle img-thumbnail" src="\content\images\RosRod.jpg" alt="Responsive image" />
+                                        <div class="caption">
+                                            <h4 id="product-name">Ros, röd</h4>
+                                            <p id="product-description">
+                                                Klassisk röd ros. Den ultimata kärleksförklaringen!
+                                            </p>
+                                            <h3>
+                                                <span class="label label-default" id="product-price">
+                                                    350 kr
+                                                </span>
+                                                <small>
+                                                    <button type="button" class="btn btn-primary btn-sm">
+                                                        <span class="glyphicon glyphicon-plus-sign"></span> Lägg till
+                                                    </button>
+                                                </small>
+                                            </h3>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="products-list col-lg-4 col-md-4 col-sm-6 col-xs-6">
+                                    <div class="thumbnail">
+                                        <img class="img-responsive img-circle img-thumbnail" src="\content\images\RosRod.jpg" alt="Responsive image" />
+                                        <div class="caption">
+                                            <h4 id="product-name">Ros, röd</h4>
+                                            <p id="product-description">
+                                                Klassisk röd ros. Den ultimata kärleksförklaringen!
+                                            </p>
+                                            <h3>
+                                                <span class="label label-default" id="product-price">
+                                                    350 kr
+                                                </span>
+                                                <small>
+                                                    <button type="button" class="btn btn-primary btn-sm">
+                                                        <span class="glyphicon glyphicon-plus-sign"></span> Lägg till
+                                                    </button>
+                                                </small>
+                                            </h3>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="products-list col-lg-4 col-md-4 col-sm-6 col-xs-6">
+                                    <div class="thumbnail">
+                                        <img class="img-responsive img-circle img-thumbnail" src="\content\images\RosRod.jpg" alt="Responsive image" />
+                                        <div class="caption">
+                                            <h4 id="product-name">Ros, röd</h4>
+                                            <p id="product-description">
+                                                Klassisk röd ros. Den ultimata kärleksförklaringen!
+                                            </p>
+                                            <h3>
+                                                <span class="label label-default" id="product-price">
+                                                    350 kr
+                                                </span>
+                                                <small>
+                                                    <button type="button" class="btn btn-primary btn-sm">
+                                                        <span class="glyphicon glyphicon-plus-sign"></span> Lägg till
+                                                    </button>
+                                                </small>
+                                            </h3>
+                                        </div>
+                                    </div>
+                                </li>*@
+
+
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3 col-sm-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title"><span class="glyphicon glyphicon-shopping-cart"></span> Varukorg</h3>
+                </div> <!-- end panel-heading -->
+                <div class="panel-body panel-body-nesting">
+                    <div class="list-group" id="buybag">
+                    
+                        @*<div class='panel panel-default' id='cart-panel'>*@
+                            <!-- Buquetts goes here! -->
+                        @*</div>*@
+
+                    </div> <!-- end list-group -->
+                </div> <!-- end panel-body-nesting -->
+                
+                
+                
+            </div>  <!-- end panel-body-default -->
+
+            <button type="button" class="btn btn-primary btn-block textarea-full-small" onclick="createNewBouqett()"><span class="glyphicon glyphicon-plus"></span><span class="glyphicon glyphicon-tree-deciduous"></span> Lägg till bukett</button>
+
+        </div> <!-- end right grid? -->
+    </div>
+</div>
+
+<script src="~/Scripts/FilterOptions.js"></script>

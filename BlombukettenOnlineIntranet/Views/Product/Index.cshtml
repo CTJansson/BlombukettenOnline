@@ -1,0 +1,75 @@
+﻿@model IEnumerable<BlombukettenOnlineIntranet.Models.ProductViewModel>
+
+@{
+    ViewBag.Title = "Index";
+
+    string imagePath = Directory.GetParent(System.Web.Hosting.HostingEnvironment.ApplicationPhysicalPath).Parent.FullName + @"\Images";
+
+}
+
+<br />
+<br />
+
+<div id="display">
+    <p>
+        @Html.ActionLink("Lägg till ny produkt", "Create", new { @class = "btn btn-link", style = "color:gray" })
+    </p>
+    <br/>
+    <table class="table table-hover tableBorder">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Color)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Category)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+            @*<th>
+                    @Html.DisplayNameFor(model => model.Active)
+                </th>*@
+            <th>
+                @Html.DisplayNameFor(model => model.Image)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Color.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Category.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Price)
+                </td>
+                <td>
+                   <img src="~/Images/@item.Image" width="30" height="30" />
+                </td>
+                <td>
+                    @Html.ActionLink("Redigera", "Edit", new { id = item.Id }, new { @class = "btn btn-primary" }) @*|*@
+                    @Ajax.ActionLink("Info", "Details", new { id = item.Id }, new AjaxOptions { UpdateTargetId = "display" }, new { @class = "btn btn-info" }) @*|*@
+                    @Html.ActionLink("Ta bort", "Delete", new { id = item.Id }, new { @class = "btn btn-danger" })
+                </td>
+            </tr>
+        }
+
+    </table>
+
+    </div>
